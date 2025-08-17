@@ -1,53 +1,36 @@
-🍕 Pizza SQL Project
-📌 Introduction
+# 🍕 Pizza SQL Project
 
-This project demonstrates the use of SQL joins to analyze pizza sales data.
-The goal is to explore how different tables in a database can be combined using JOIN operations to generate meaningful insights such as category-wise sales, revenue contribution, and order analysis.
+## 📌 Overview
+This project demonstrates how to use **SQL JOINs** to analyze pizza sales data.  
+By combining multiple tables, we can extract meaningful insights such as category-wise revenue, sales distribution, and order trends.
 
-🗄️ Database Schema
+## 🗄️ Database Schema
+- **pizza_types** → Pizza categories and names  
+- **pizzas** → Pizza details (size, price)  
+- **orders** → Order information (date, time)  
+- **orders_details** → Quantity of each pizza in each order  
 
-The project uses the following tables:
+**Relationships:**
+- `pizza_types.pizza_type_id = pizzas.pizza_type_id`  
+- `pizzas.pizza_id = orders_details.pizza_id`  
+- `orders.order_id = orders_details.order_id`  
 
-pizza_types → Contains pizza categories and names.
+## 🔗 SQL Concepts Used
+- `INNER JOIN`, `LEFT JOIN`  
+- Aggregations: `SUM()`, `COUNT()`, `ROUND()`  
+- `GROUP BY`, `ORDER BY`  
+- Subqueries
+- 🚀 How to Run
 
-pizzas → Contains pizza details such as size and price.
+## 🚀 How to Run
+1. Import the dataset into **MySQL / PostgreSQL / SQLite**.  
+2. Run the queries from **`pizza_queries.sql`**.  
+3. Analyze the results and generate insights.  
 
-orders → Contains order details (date and time).
+## 📈 Key Insights
+- 🍕 Top-selling pizza categories  
+- 💰 Revenue distribution by pizza size  
+- ⏳ Order patterns and trends  
 
-orders_details → Contains quantity of each pizza in each order.
 
-Example Relationship
 
-pizza_types.pizza_type_id = pizzas.pizza_type_id
-
-pizzas.pizza_id = orders_details.pizza_id
-
-orders.order_id = orders_details.order_id
-
-🔗 SQL Concepts Used
-
-INNER JOIN → To combine pizzas with their categories.
-
-LEFT JOIN → To include orders even if some details are missing.
-
-Aggregate Functions → SUM(), COUNT(), ROUND().
-
-GROUP BY & ORDER BY → To organize and rank results.
-
-Subqueries → For calculating percentage contributions.
-
-🚀 How to Run
-
-Import the SQL dataset into your database (MySQL / PostgreSQL / SQLite).
-
-Run the queries from pizza_queries.sql.
-
-Explore different joins and aggregations to analyze sales.
-
-📈 Key Insights
-
-Which pizza category contributes most to sales.
-
-Revenue distribution across different pizza sizes.
-
-Order patterns over time.
